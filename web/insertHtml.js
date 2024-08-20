@@ -1,7 +1,7 @@
 document.getElementById('comexp').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
-    <button onclick="document.getElementById('main-auth').classlist.remove('d-none')">login</button>
+    <button onclick="document.getElementById('main-auth').classList.remove('d-none')">login</button>
     <div id="main-auth" class="d-none">
         <div class="row justify-content-around align-items-center">
             <div id="register" class="col-5">
