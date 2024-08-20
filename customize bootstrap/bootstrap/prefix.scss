@@ -1,0 +1,4 @@
+@use "sass:meta";
+.bs-isolated {
+    @include meta.load-css('css/bootstrap.min.css');
+}

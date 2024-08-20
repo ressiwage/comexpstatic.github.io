@@ -172,5 +172,5 @@ textarea:hover {
 }
 
 .w700{
-    width: 700px;
+    width: 700px !important;
 }
