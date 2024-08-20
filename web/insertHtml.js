@@ -2,7 +2,7 @@ document.getElementById('comexp').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
     <button onclick="document.getElementById('main-auth').style.display=''">login</button>
-    <div class="main-auth d-none">
+    <div id="main-auth" class="d-none">
         <div class="row justify-content-around align-items-center">
             <div id="register" class="col-5">
                 <form action="" method="post" id="registerform" class="form-centered"><input placeholder="email"
@@ -19,7 +19,7 @@ document.getElementById('comexp').innerHTML=`
             </div>
         </div>
     </div>
-    <div class="main-archives">
+    <div id="main-archives">
         <div id="please-login">
             <h1>pleas login</h1>
         </div>
