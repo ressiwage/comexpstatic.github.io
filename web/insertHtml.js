@@ -1,3 +1,5 @@
+const LOGIN_URL = 'http://127.0.0.1:5000/auth/login'
+const UPLOAD_VIDEO_URL = 'http://127.0.0.1:5000/upload_video_new'
 document.getElementById('comexp').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
@@ -12,7 +14,7 @@ document.getElementById('comexp').innerHTML=`
             </div>
             <h1 class="col-2 d-inline text-center align-middle">OR</h1>
             <div id="login" class="col-5">
-                <form action="http://127.0.0.1:5000/auth/login" method="post" target="dummyframe" id="loginform"
+                <form action="${LOGIN_URL}" method="post" target="dummyframe" id="loginform"
                     class="form-centered"><input placeholder="email" type="text" name="email" id="email"> <input
                         placeholder="password" type="password" name="password" id="password"> <input
                         class="submit-button" id="submit" type="submit" value="LOGIN"></form>
@@ -30,7 +32,7 @@ document.getElementById('comexp').innerHTML=`
         <div id="videos" class="d-none">
             <h1>VIDEOS</h1>
             <div class="row mx-1 my-3">
-                <form class="col-4" action="http://127.0.0.1:5000/upload_video_new" method="post" target="dummyframe"
+                <form class="col-4" action="${UPLOAD_VIDEO_URL}" method="post" target="dummyframe"
                     id="upload-video-form"><input type="file" name="upload-file" id="upload-file" placeholder=""> <input
                         type="text" hidden name="archive-id" id="archive-id" placeholder=""> <input type="text" hidden
                         name="md5" id="md5" placeholder=""> <input class="submit-button" id="submit-upload"
