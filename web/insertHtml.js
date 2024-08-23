@@ -1,5 +1,5 @@
-const LOGIN_URL = 'http://127.0.0.1:5000/auth/login'
-const UPLOAD_VIDEO_URL = 'http://127.0.0.1:5000/upload_video_new'
+const LOGIN_URL = 'http://127.0.0.1:9999/auth/login'
+const UPLOAD_VIDEO_URL = 'http://127.0.0.1:9999/upload_video_new'
 document.getElementById('comexp').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
