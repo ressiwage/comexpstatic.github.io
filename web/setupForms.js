@@ -62,9 +62,11 @@ if (document.forms['create-archive-form'] !== undefined) {
         var fd = new FormData();
         fetch(event.target.action, {
             method: 'POST',
-            body: {name:document.getElementById('archive-name').value}, // event.target is the form
+            body: JSON.stringify({name:document.getElementById('archive-name').value}), // event.target is the form
             headers: {
                 'archives-token': token,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             }
         }).then((response) => {
             if (!response.ok) {
