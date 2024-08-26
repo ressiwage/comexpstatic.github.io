@@ -28,6 +28,7 @@ if (document.forms['upload-video-form'] !== undefined) {
     document.forms['upload-video-form'].addEventListener('submit', (event) => {
         event.preventDefault();
         let token = JSON.parse(localStorage.getItem("comexp-token"));
+        console.log(token);
         var fd = new FormData();
         fd.append('file', document.getElementById('upload-file').files[0])
         fetch(event.target.action, {

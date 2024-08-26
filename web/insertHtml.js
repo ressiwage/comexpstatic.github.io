@@ -32,11 +32,12 @@ document.getElementById('comexp').innerHTML=`
         <div id="videos" class="d-none">
             <h1>VIDEOS</h1>
             <div class="row mx-1 my-3">
-                <form class="col-4" action="${UPLOAD_VIDEO_URL}" method="post" target="dummyframe"
-                    id="upload-video-form"><input type="file" name="upload-file" id="upload-file" placeholder=""> <input
-                        type="text" hidden name="archive-id" id="archive-id" placeholder=""> <input type="text" hidden
-                        name="md5" id="md5" placeholder=""> <input class="submit-button" id="submit-upload"
-                        type="submit" value="ЗАГРУЗИТЬ ВИДЕО"></form>
+                <form class="col-4" action="${UPLOAD_VIDEO_URL}" method="post" target="dummyframe" id="upload-video-form">
+                    <input type="file" name="upload-file" id="upload-file" placeholder=""> 
+                    <input type="text" hidden name="archive-id" id="archive-id" placeholder=""> 
+                    <input type="text" hidden name="md5" id="md5" placeholder=""> 
+                    <input class="submit-button" id="submit-upload" type="submit" value="ЗАГРУЗИТЬ ВИДЕО">
+                </form>
             </div>
             <hr>
             <div id="videos-container" class="row flex-nowrap overflow-auto mx-0"></div>
