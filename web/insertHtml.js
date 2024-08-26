@@ -1,5 +1,6 @@
 const LOGIN_URL = 'http://127.0.0.1:9999/auth/login'
 const UPLOAD_VIDEO_URL = 'http://127.0.0.1:9999/upload_video_new'
+const CREATE_ARCHIVE_URL = 'http://127.0.0.1:9999/create_archive'
 document.getElementById('comexp').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
@@ -37,6 +38,13 @@ document.getElementById('comexp').innerHTML=`
                     <input type="text" hidden name="archive-id" id="archive-id" placeholder=""> 
                     <input type="text" hidden name="md5" id="md5" placeholder=""> 
                     <input class="submit-button" id="submit-upload" type="submit" value="ЗАГРУЗИТЬ ВИДЕО">
+                </form>
+            </div>
+            <hr>
+            <div class="row mx-1 my-3">
+                <form class="col-4" action="${CREATE_ARCHIVE_URL}" method="post" target="dummyframe" id="create-archive-form">
+                    <input type="text" name="name" id="archive-name" placeholder=""> 
+                    <input class="submit-button" id="submit-create" type="submit" value="создать архив">
                 </form>
             </div>
             <hr>

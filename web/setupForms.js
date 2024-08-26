@@ -23,7 +23,6 @@ if (document.forms['loginform'] !== undefined) {
     });
 }
 
-console.log(document.forms['upload-video-form'] !== undefined)
 //настраиваем потоковую загрузку видео
 if (document.forms['upload-video-form'] !== undefined) {
     document.forms['upload-video-form'].addEventListener('submit', (event) => {
@@ -54,6 +53,31 @@ if (document.forms['upload-video-form'] !== undefined) {
     });
 }
 
+//настраиваем создание архива
+if (document.forms['create-archive-form'] !== undefined) {
+    document.forms['create-archive-form'].addEventListener('submit', (event) => {
+        event.preventDefault();
+        let token = JSON.parse(localStorage.getItem("comexp-token"));
+        console.log(token);
+        var fd = new FormData();
+        fetch(event.target.action, {
+            method: 'POST',
+            body: {name:document.getElementById('archive-name').value}, // event.target is the form
+            headers: {
+                'archives-token': token,
+            }
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // or response.text() or whatever the server sends
+        }).then((json) => {
+            // handle_login_js(json);
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
+}
 
 //md5 calculation
 const chunkSize = 64 * 1024 * 1024;
@@ -94,7 +118,6 @@ const readFile = async (file) => {
 };
 
 
-console.log(document.getElementById('upload-file') !== null)
 //вычисляем md5 хэш файла при его загрузке
 if (document.getElementById('upload-file') !== null) {
     document.getElementById('upload-file').addEventListener("change", async (event) => {
