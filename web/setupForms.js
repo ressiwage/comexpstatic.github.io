@@ -23,6 +23,7 @@ if (document.forms['loginform'] !== undefined) {
     });
 }
 
+console.log(document.forms['upload-video-form'] !== undefined)
 //настраиваем потоковую загрузку видео
 if (document.forms['upload-video-form'] !== undefined) {
     document.forms['upload-video-form'].addEventListener('submit', (event) => {
@@ -93,6 +94,7 @@ const readFile = async (file) => {
 };
 
 
+console.log(document.getElementById('upload-file') !== null)
 //вычисляем md5 хэш файла при его загрузке
 if (document.getElementById('upload-file') !== null) {
     document.getElementById('upload-file').addEventListener("change", async (event) => {
