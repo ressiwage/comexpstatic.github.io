@@ -28,6 +28,7 @@ if (document.forms['upload-video-form'] !== undefined) {
     document.forms['upload-video-form'].addEventListener('submit', (event) => {
         event.preventDefault();
         let token = JSON.parse(localStorage.getItem("comexp-token"));
+        console.log(token);
         var fd = new FormData();
         fd.append('file', document.getElementById('upload-file').files[0])
         fetch(event.target.action, {
@@ -52,6 +53,33 @@ if (document.forms['upload-video-form'] !== undefined) {
     });
 }
 
+//настраиваем создание архива
+if (document.forms['create-archive-form'] !== undefined) {
+    document.forms['create-archive-form'].addEventListener('submit', (event) => {
+        event.preventDefault();
+        let token = JSON.parse(localStorage.getItem("comexp-token"));
+        console.log(token);
+        var fd = new FormData();
+        fetch(event.target.action, {
+            method: 'POST',
+            body: JSON.stringify({name:document.getElementById('archive-name').value}), // event.target is the form
+            headers: {
+                'archives-token': token,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // or response.text() or whatever the server sends
+        }).then((json) => {
+            // handle_login_js(json);
+        }).catch((error) => {
+            console.log(error);
+        });
+    });
+}
 
 //md5 calculation
 const chunkSize = 64 * 1024 * 1024;
