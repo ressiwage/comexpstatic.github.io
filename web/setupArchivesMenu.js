@@ -5,7 +5,14 @@ const ARCHIVES_CONTAINER = document.getElementById('archives-container');
 const VIDEO_CONTAINER = document.getElementById('videos-container');
 
 async function loadArchives() {
-    let token = JSON.parse(localStorage.getItem("comexp-token"));
+    let tokenLocalstorage = JSON.parse(localStorage.getItem("comexp-token"));
+    let tokenHtml = document.getElementById("comexp-body")===null?null:JSON.parse(document.getElementById("comexp-body").dataset.key);
+    let token;
+    if (tokenHtml===null){
+        token=tokenLocalstorage;
+    }else{
+        token=tokenHtml
+    }
     if (token === null) { return }
     ARCHIVE_SECTION.classList.remove('d-none');
     PLEASE_LOGIN.classList.add('d-none')
