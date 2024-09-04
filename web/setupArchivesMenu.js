@@ -6,7 +6,7 @@ const VIDEO_CONTAINER = document.getElementById('videos-container');
 
 async function loadArchives() {
     let tokenLocalstorage = JSON.parse(localStorage.getItem("comexp-token"));
-    let tokenHtml = document.getElementById("comexp-body")===null?document.getElementById("comexp-body").dataset.key;
+    let tokenHtml = document.getElementById("comexp-body")===null?null:document.getElementById("comexp-body").dataset.key;
     let token;
     if (tokenHtml===null){
         token=tokenLocalstorage;
