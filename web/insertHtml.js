@@ -1,7 +1,7 @@
 const LOGIN_URL = 'http://127.0.0.1:9999/auth/login'
 const UPLOAD_VIDEO_URL = 'http://127.0.0.1:9999/upload_video_new'
 const CREATE_ARCHIVE_URL = 'http://127.0.0.1:9999/create_archive'
-document.getElementById('comexp').innerHTML=`
+document.getElementById('comexp-login')===null?undefined:document.getElementById('comexp-login').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
     <button onclick="document.getElementById('main-auth').classList.remove('d-none')">login</button>
@@ -22,6 +22,11 @@ document.getElementById('comexp').innerHTML=`
             </div>
         </div>
     </div>
+</div>
+`
+
+document.getElementById('comexp-body')===null?undefined:document.getElementById('comexp-body').innerHTML=`
+<div class="bs-isolated">
     <div id="main-archives">
         <div id="please-login">
             <h1>pleas login</h1>
@@ -50,6 +55,4 @@ document.getElementById('comexp').innerHTML=`
             <hr>
             <div id="videos-container" class="row flex-nowrap overflow-auto mx-0"></div>
         </div>
-    </div>
-</div>
 `
