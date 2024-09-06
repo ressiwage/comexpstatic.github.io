@@ -46,13 +46,6 @@ document.getElementById('comexp-body')===null?undefined:document.getElementById(
                 </form>
             </div>
             <hr>
-            <div class="row mx-1 my-3">
-                <form class="col-4" action="${CREATE_ARCHIVE_URL}" method="post" target="dummyframe" id="create-archive-form">
-                    <input type="text" name="name" id="archive-name" placeholder=""> 
-                    <input class="submit-button" id="submit-create" type="submit" value="создать архив">
-                </form>
-            </div>
-            <hr>
             <div id="videos-container" class="row flex-nowrap overflow-auto mx-0"></div>
         </div>
 `
