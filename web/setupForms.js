@@ -47,6 +47,7 @@ if (document.forms['upload-video-form'] !== undefined) {
             return response.json(); // or response.text() or whatever the server sends
         }).then((json) => {
             // handle_login_js(json);
+            alert('Success')
         }).catch((error) => {
             console.log(error);
         });
