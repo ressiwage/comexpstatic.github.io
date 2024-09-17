@@ -36,3 +36,15 @@ function makeWidgetCode(token){
 <script src="https://ressiwage.github.io/web/setupArchivesMenu.js"></script>
 <script src="https://ressiwage.github.io/web/setupForms.js"></script>`
 }
+
+function getThumbnail(url) {
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            'archives-token': JSON.parse(localStorage.getItem('comexp-token')),
+            // 'Accept': 'application/json',
+            // 'Content-Type': 'application/json'
+        }
+    }
+    )
+}
