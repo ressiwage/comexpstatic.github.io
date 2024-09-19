@@ -16,7 +16,7 @@ async function loadArchives() {
     if (token === null) { return }
     ARCHIVE_SECTION.classList.remove('d-none');
     PLEASE_LOGIN.classList.add('d-none')
-    let response = await fetch('http://127.0.0.1:9999/get_archives', {
+    let response = await fetch('http://127.0.0.1:9999/get_archives_nested', {
         headers: { 'archives-token': token }
     });
     if (response.ok) {
