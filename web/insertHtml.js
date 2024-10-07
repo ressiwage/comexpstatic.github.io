@@ -1,6 +1,6 @@
-const LOGIN_URL = 'http://127.0.0.1:9999/auth/login'
-const UPLOAD_VIDEO_URL = 'http://127.0.0.1:9999/upload_video_new'
-const CREATE_ARCHIVE_URL = 'http://127.0.0.1:9999/create_archive'
+const LOGIN_URL = 'http://10.0.7.1:9998/auth/login'
+const UPLOAD_VIDEO_URL = 'http://10.0.7.1:9998/upload_video_new'
+const CREATE_ARCHIVE_URL = 'http://10.0.7.1:9998/create_archive'
 document.getElementById('comexp-login')===null?undefined:document.getElementById('comexp-login').innerHTML=`
 <iframe name="dummyframe" id="dummyframe" style="display:none"></iframe>
 <div class="bs-isolated">
